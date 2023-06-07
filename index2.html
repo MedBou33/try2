@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Set Ready Go</title>
+    <title>Artistic Page</title>
     <style>
         body {
-            background-color: black;
+            background-color: #000;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
+        }
+
+        h1 {
             font-family: 'Arial', sans-serif;
-        }
-
-        .text {
             font-size: 4em;
-            animation: showText 3s ease-in-out infinite;
+            color: red;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: colorChange 6s infinite;
         }
 
-        @keyframes showText {
-            0% {
-                color: red;
-            }
-            33.33% {
-                color: yellow;
-            }
-            66.66% {
-                color: green;
-            }
-            100% {
-                color: red;
-            }
+        @keyframes colorChange {
+            0% { color: red; }
+            50% { color: yellow; }
+            100% { color: limegreen; }
         }
     </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            var words = ['set', 'ready', 'go'];
+            var currentIndex = 0;
+            var h1 = document.querySelector('h1');
+
+            setInterval(function() {
+                h1.textContent = words[currentIndex];
+                currentIndex = (currentIndex + 1) % words.length;
+            }, 3000); // Change the word every 3 seconds
+        });
+    </script>
 </head>
 <body>
-    <div class="text">set</div>
+    <h1></h1>
 </body>
 </html>
