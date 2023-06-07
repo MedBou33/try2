@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set Ready Go</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .text {
+            font-size: 4em;
+            animation: showText 3s ease-in-out infinite;
+        }
+
+        @keyframes showText {
+            0% {
+                color: red;
+            }
+            33.33% {
+                color: yellow;
+            }
+            66.66% {
+                color: green;
+            }
+            100% {
+                color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text">set</div>
+</body>
+</html>
